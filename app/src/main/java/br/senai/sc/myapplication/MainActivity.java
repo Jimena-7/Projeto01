@@ -1,6 +1,5 @@
 package br.senai.sc.myapplication;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         setTitle("Produtos");
 
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.menu_deslizante, menu);
+
     }
 
     @Override
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Opção desativada", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.option_2:
-                Toast.makeText(this, "Deseja excluir o item?", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Item excluido", Toast.LENGTH_SHORT).show();
         }
         return super.onContextItemSelected(item);
     }
@@ -84,8 +84,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    public void onClickNovoProduto(View v) {
+    public void onClickNovooProduto(View v) {
         Intent intent = new Intent(MainActivity.this, CadastroProdutoActivity.class);
         startActivityForResult(intent, REQUEST_CODE_NOVO_PRODUTO);
     }

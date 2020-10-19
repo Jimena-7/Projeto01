@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/option_2"
-        android:title="Excluir"/>
+        android:title="Excluir" />
 
 
 
